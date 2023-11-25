@@ -5,7 +5,7 @@ FROM alpine:latest
 RUN apk add --no-cache lighttpd
 
 # 将你的静态页面复制到镜像中
-COPY ./index.html /var/www/localhost/htdocs/index.html
+COPY ./helloCopilot.html /var/www/localhost/htdocs/helloCopilot.html
 
 # 暴露80端口
 EXPOSE 80
