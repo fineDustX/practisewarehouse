@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(orange, rgb(228, 228, 201));
+            height: 100vh;
+            margin: 0;
+            background-size: 800% 800%;
+            animation: Gradient 15s ease infinite;
+        }
+
+        @keyframes Gradient {
+            0% {background-position: 0% 50%}
+            50% {background-position: 100% 50%}
+            100% {background-position: 0% 50%}
+        }
+
+        #hello, #time {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 3em;
+            transform: translate(-50%, -50%);
+        }
+
+        #time {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    font-size: 2em;
+    transform: translate(-50%, -50%);
+}
+    </style>
+</head>
+<body>
+    <div id="hello">Hello Copilot</div>
+    <div id="time"></div>
+    <script>
+        var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+        var i = 0;
+        setInterval(function() {
+            var time = new Date().toLocaleTimeString();
+            document.getElementById('hello').style.color = colors[i];
+            document.getElementById('time').innerText = 'Color changed to ' + colors[i] + ' at ' + time;
+            i = (i + 1) % colors.length;
+        }, 2000);
+    </script>
+</body>
+</html>
